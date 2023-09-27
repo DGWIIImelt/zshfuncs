@@ -4,6 +4,7 @@ function cd() {
   
   if [[ -f .nvmrc ]]; then
     runNVMinstall
+    nvm use
   fi
 
   if [[ -e .git ]]; then
