@@ -4,7 +4,6 @@ function cd() {
   
   if [[ -f .nvmrc ]]; then
     runNVMinstall
-    nvm use
   fi
 
   if [[ -e .git ]]; then
@@ -26,6 +25,7 @@ function runNVMinstall() {
   if [[ $useMessage =~ $uninstalledPattern ]]; then
     evalWrapper ${BASH_REMATCH[0]}
   fi
+  nvm use
 }
 
 function deleteSwapFiles(){
